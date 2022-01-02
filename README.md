@@ -1,8 +1,10 @@
-<img style="vertical-align: middle;" src="data/icons/re.sonny.Webground.svg" width="120" height="120" align="left">
-
 # Webground
 
 A Playground for HTML/CSS/JavaScript
+
+![screenshot](data/screenshot.png)
+
+This is a work in progress.
 
 ## Development
 
