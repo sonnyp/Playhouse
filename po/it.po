@@ -1,0 +1,56 @@
+# ITALIAN TRANSLATION.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the re.sonny.Webground package.
+# ALBANO BATTISTELLA <ALBANO_BATTISTELLA@HOTMAIL.COM>, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: re.sonny.Webground\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-01-02 16:50+0100\n"
+"PO-Revision-Date: 2022-01-02 17:55+0100\n"
+"Last-Translator: Albano Battistella <albano_battistella@hotmail.com>\n"
+"Language-Team: Italian <LL@li.org>\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. TRANSLATORS: Don't translate
+#: data/re.sonny.Webground.desktop:4
+msgid "Webground"
+msgstr "Webground"
+
+#: data/re.sonny.Webground.desktop:5
+msgid "A playground for Web code"
+msgstr "Un parco giochi per il codice Web"
+
+#. TRANSLATORS: Don't translate
+#: data/re.sonny.Webground.desktop:12
+msgid "JS Bin;CodePen;JSFiddle;"
+msgstr ""
+
+#: data/re.sonny.Webground.metainfo.xml:10 src/about.js:9
+msgid "A Playground for HTML/CSS/JavaScript"
+msgstr "Un parco giochi per HTML/CSS/JavaScript"
+
+#: data/re.sonny.Webground.metainfo.xml:13
+msgid "Something clever"
+msgstr "Qualcosa di intelligente"
+
+#. TRANSLATORS: eg. 'Translator Name <your.email@domain.com>' or 'Translator Name https://website.example'
+#: src/about.js:19
+msgid "translator-credits"
+msgstr "Albano Battistella"
+
+#: src/ShortcutsWindow.ui:15 src/window.ui:161
+msgid "Keyboard Shortcuts"
+msgstr "Scorciatoie da tastiera"
+
+#: src/ShortcutsWindow.ui:21
+msgid "Quit"
+msgstr "Esci"
+
+#: src/window.ui:165
+msgid "About Webground"
+msgstr "Informazioni su Webground"
