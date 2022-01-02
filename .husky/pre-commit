@@ -1,0 +1,9 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+xgettext -f po/POTFILES -o po/re.sonny.Webground.pot --no-wrap -cTRANSLATORS --from-code=UTF-8
+sed -i "s/same license as the PACKAGE package./same license as the re.sonny.Webground package./" po/re.sonny.Webground.pot
+sed -i "s/Project-Id-Version: PACKAGE VERSION/Project-Id-Version: re.sonny.Webground/" po/re.sonny.Webground.pot
+git add po/re.sonny.Webground.pot
+
+npx lint-staged

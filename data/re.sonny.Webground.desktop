@@ -1,0 +1,13 @@
+[Desktop Entry]
+# TRANSLATORS: Don't translate
+Name=Webground
+Comment=A playground for Web code
+Exec=re.sonny.Webground
+Terminal=false
+Type=Application
+Categories=WebDevelopment;Development;IDE;GNOME;GTK;
+Icon=re.sonny.Webground
+# TRANSLATORS: Don't translate
+Keywords=JS Bin;CodePen;JSFiddle;
+DBusActivatable=true
+StartupNotify=true

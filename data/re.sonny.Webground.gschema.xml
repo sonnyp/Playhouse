@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<schemalist gettext-domain="re.sonny.Webground">
+  <schema id="re.sonny.Webground" path="/re/sonny/Webground/">
+    <key name="show-html" type="b">
+      <default>true</default>
+    </key>
+    <key name="show-css" type="b">
+      <default>false</default>
+    </key>
+        <key name="show-javascript" type="b">
+      <default>false</default>
+    </key>
+    <key name="show-output" type="b">
+      <default>true</default>
+    </key>
+    <key name="show-devtools" type="b">
+      <default>false</default>
+    </key>
+    </schema>
+</schemalist>

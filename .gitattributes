@@ -1,0 +1,7 @@
+package-lock.json -diff
+data/icons/re.sonny.Webground-symbolic.svg -diff
+data/icons/re.sonny.Webground.Devel.svg -diff
+data/icons/re.sonny.Webground.svg -diff
+
+# po/re.sonny.Webground.pot -diff
+# po/*.po -diff

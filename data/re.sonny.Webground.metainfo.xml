@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<component type="desktop">
+  <id>re.sonny.Webground</id>
+  <launchable type="desktop-id">re.sonny.Webground.desktop</launchable>
+  <name translatable="no">Webground</name>
+  <developer_name translatable="no">Sonny Piers</developer_name>
+  <update_contact>sonny@fastmail.net</update_contact>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0</project_license>
+  <summary>A Playground for HTML/CSS/JavaScript</summary>
+  <translation type="gettext">re.sonny.Webground</translation>
+  <description>
+    <p>Something clever</p>
+  </description>
+  <url type="homepage">https://webground.sonny.re</url>
+  <url type="bugtracker">https://webground.sonny.re/feedback</url>
+  <url type="donation">https://webground.sonny.re/donate</url>
+  <url type="translate">https://webground.sonny.re/translate</url>
+  <content_rating type="oars-1.1" />
+  <releases>
+  </releases>
+  <kudos>
+    <kudo>HiDpiIcon</kudo>
+    <kudo>HighContrast</kudo>
+    <kudo>ModernToolkit</kudo>
+  </kudos>
+</component>
