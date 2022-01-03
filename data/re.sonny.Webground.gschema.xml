@@ -14,7 +14,7 @@
       <default>true</default>
     </key>
     <key name="show-devtools" type="b">
-      <default>false</default>
+      <default>true</default>
     </key>
     </schema>
 </schemalist>

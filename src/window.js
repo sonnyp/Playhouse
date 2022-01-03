@@ -1,7 +1,7 @@
 import Gtk from "gi://Gtk";
 // import Gdk from "gi://Gdk";
 import GObject from "gi://GObject";
-// import Gio from "gi://Gio";
+import Gio from "gi://Gio";
 import WebKit from "gi://WebKit2?version=5.0";
 import Source from "gi://GtkSource?version=5";
 
@@ -10,10 +10,10 @@ import Shortcuts from "./Shortcuts.js";
 import Devtools from "./Devtools.js";
 import WebView from "./WebView.js";
 
-// const settings = new Gio.Settings({
-//   schema_id: "re.sonny.Webground",
-//   path: "/re/sonny/Webground/",
-// });
+const settings = new Gio.Settings({
+  schema_id: "re.sonny.Webground",
+  path: "/re/sonny/Webground/",
+});
 
 export default function Welcome({ application }) {
   // Solves
@@ -56,6 +56,12 @@ export default function Welcome({ application }) {
   const button_javascript = builder.get_object("button_javascript");
   const button_output = builder.get_object("button_output");
   const button_devtools = builder.get_object("button_devtools");
+
+  settings.bind('show-html', button_html, 'active', Gio.SettingsBindFlags.DEFAULT);
+  settings.bind('show-css', button_css, 'active', Gio.SettingsBindFlags.DEFAULT);
+  settings.bind('show-javascript', button_javascript, 'active', Gio.SettingsBindFlags.DEFAULT);
+  settings.bind('show-output', button_output, 'active', Gio.SettingsBindFlags.DEFAULT);
+  settings.bind('show-devtools', button_devtools, 'active', Gio.SettingsBindFlags.DEFAULT);
 
   button_html.bind_property(
     "active",
