@@ -1,4 +1,4 @@
-install_subdir('.', install_dir : pkgdatadir, exclude_files: ['re.sonny.Webground', 'meson.build'])
+install_subdir('.', install_dir : pkgdatadir, exclude_files: ['re.sonny.Playhouse', 'meson.build'])
 
 bin_conf = configuration_data()
 bin_conf.set('GJS', find_program('gjs').path())
@@ -10,8 +10,8 @@ bin_conf.set('datadir', datadir)
 bin_conf.set('pkgdatadir', pkgdatadir)
 
 configure_file(
-  input: 're.sonny.Webground',
-  output: 're.sonny.Webground',
+  input: 're.sonny.Playhouse',
+  output: 're.sonny.Playhouse',
   configuration: bin_conf,
   install: true,
   install_dir: get_option('bindir')

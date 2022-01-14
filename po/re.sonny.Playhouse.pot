@@ -1,14 +1,14 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the re.sonny.Webground package.
+# This file is distributed under the same license as the re.sonny.Playhouse package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: re.sonny.Webground\n"
+"Project-Id-Version: re.sonny.Playhouse\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-04 00:47+0100\n"
+"POT-Creation-Date: 2022-01-14 13:46+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,24 +18,24 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #. TRANSLATORS: Don't translate
-#: data/re.sonny.Webground.desktop:4
-msgid "Webground"
+#: data/re.sonny.Playhouse.desktop:4
+msgid "Playhouse"
 msgstr ""
 
-#: data/re.sonny.Webground.desktop:5
+#: data/re.sonny.Playhouse.desktop:5
 msgid "A playground for Web code"
 msgstr ""
 
 #. TRANSLATORS: Don't translate
-#: data/re.sonny.Webground.desktop:12
+#: data/re.sonny.Playhouse.desktop:12
 msgid "JS Bin;CodePen;JSFiddle;"
 msgstr ""
 
-#: data/re.sonny.Webground.metainfo.xml:10 src/about.js:9
+#: data/re.sonny.Playhouse.metainfo.xml:10 src/about.js:9
 msgid "A Playground for HTML/CSS/JavaScript"
 msgstr ""
 
-#: data/re.sonny.Webground.metainfo.xml:13
+#: data/re.sonny.Playhouse.metainfo.xml:13
 msgid "Something clever"
 msgstr ""
 
@@ -53,5 +53,5 @@ msgid "Quit"
 msgstr ""
 
 #: src/window.ui:165
-msgid "About Webground"
+msgid "About Playhouse"
 msgstr ""

@@ -1,4 +1,4 @@
-project('re.sonny.Webground',
+project('re.sonny.Playhouse',
   version: '0.1.0',
   meson_version: '>= 0.59.0',
   license: 'GPL-3.0-only'

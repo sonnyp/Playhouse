@@ -6,13 +6,13 @@
   xmlns:gnome="http://api.gnome.org/doap-extensions#"
   xmlns="http://usefulinc.com/ns/doap#"
 >
-  <name>Webground</name>
+  <name>Playhouse</name>
   <shortdesc>A Playground for HTML/CSS/JavaScript</shortdesc>
   <description
   >Something clever.</description>
 
-  <homepage rdf:resource="https://webground.sonny.re" />
-  <bug-database rdf:resource="https://webground.sonny.re/feedback" />
+  <homepage rdf:resource="https://playhouse.sonny.re" />
+  <bug-database rdf:resource="https://playhouse.sonny.re/feedback" />
   <programming-language>JavaScript</programming-language>
 
   <maintainer>

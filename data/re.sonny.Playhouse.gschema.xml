@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<schemalist gettext-domain="re.sonny.Webground">
-  <schema id="re.sonny.Webground" path="/re/sonny/Webground/">
+<schemalist gettext-domain="re.sonny.Playhouse">
+  <schema id="re.sonny.Playhouse" path="/re/sonny/Playhouse/">
     <key name="show-html" type="b">
       <default>true</default>
     </key>

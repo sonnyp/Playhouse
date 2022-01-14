@@ -3,15 +3,15 @@ import { bindtextdomain, textdomain } from "gettext";
 
 import Application from "./application.js";
 
-GLib.set_prgname("re.sonny.Webground");
-GLib.set_application_name("Webground");
+GLib.set_prgname("re.sonny.Playhouse");
+GLib.set_application_name("Playhouse");
 
 export default function main(argv, { version, datadir }) {
   bindtextdomain(
-    "re.sonny.Webground",
+    "re.sonny.Playhouse",
     GLib.build_filenamev([datadir, "locale"]),
   );
-  textdomain("re.sonny.Webground");
+  textdomain("re.sonny.Playhouse");
 
   const application = Application({ version, datadir });
 

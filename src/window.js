@@ -11,8 +11,8 @@ import Devtools from "./Devtools.js";
 import WebView from "./WebView.js";
 
 const settings = new Gio.Settings({
-  schema_id: "re.sonny.Webground",
-  path: "/re/sonny/Webground/",
+  schema_id: "re.sonny.Playhouse",
+  path: "/re/sonny/Playhouse/",
 });
 
 export default function Welcome({ application }) {
@@ -38,7 +38,7 @@ export default function Welcome({ application }) {
 
   const source_view_html = builder.get_object("source_view_html");
   source_view_html.buffer.set_language(language_manager.get_language("html"));
-  source_view_html.buffer.set_text(`<p>Webground!</p>`.trim(), -1);
+  source_view_html.buffer.set_text(`<p>Playhouse!</p>`.trim(), -1);
 
   const source_view_css = builder.get_object("source_view_css");
   source_view_css.buffer.set_language(language_manager.get_language("css"));
@@ -57,11 +57,36 @@ export default function Welcome({ application }) {
   const button_output = builder.get_object("button_output");
   const button_devtools = builder.get_object("button_devtools");
 
-  settings.bind('show-html', button_html, 'active', Gio.SettingsBindFlags.DEFAULT);
-  settings.bind('show-css', button_css, 'active', Gio.SettingsBindFlags.DEFAULT);
-  settings.bind('show-javascript', button_javascript, 'active', Gio.SettingsBindFlags.DEFAULT);
-  settings.bind('show-output', button_output, 'active', Gio.SettingsBindFlags.DEFAULT);
-  settings.bind('show-devtools', button_devtools, 'active', Gio.SettingsBindFlags.DEFAULT);
+  settings.bind(
+    "show-html",
+    button_html,
+    "active",
+    Gio.SettingsBindFlags.DEFAULT,
+  );
+  settings.bind(
+    "show-css",
+    button_css,
+    "active",
+    Gio.SettingsBindFlags.DEFAULT,
+  );
+  settings.bind(
+    "show-javascript",
+    button_javascript,
+    "active",
+    Gio.SettingsBindFlags.DEFAULT,
+  );
+  settings.bind(
+    "show-output",
+    button_output,
+    "active",
+    Gio.SettingsBindFlags.DEFAULT,
+  );
+  settings.bind(
+    "show-devtools",
+    button_devtools,
+    "active",
+    Gio.SettingsBindFlags.DEFAULT,
+  );
 
   button_html.bind_property(
     "active",
@@ -108,7 +133,7 @@ export default function Welcome({ application }) {
         <head>
           <meta charset="utf-8" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <title>Webground</title>
+          <title>Playhouse</title>
           <style>${source_view_css.buffer.text}</style>
         </head>
 

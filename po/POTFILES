@@ -1,6 +1,6 @@
-data/re.sonny.Webground.desktop
-data/re.sonny.Webground.gschema.xml
-data/re.sonny.Webground.metainfo.xml
+data/re.sonny.Playhouse.desktop
+data/re.sonny.Playhouse.gschema.xml
+data/re.sonny.Playhouse.metainfo.xml
 src/about.js
 src/ShortcutsWindow.ui
 src/window.ui

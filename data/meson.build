@@ -1,6 +1,6 @@
 desktop_file = i18n.merge_file(
-  input: 're.sonny.Webground.desktop',
-  output: 're.sonny.Webground.desktop',
+  input: 're.sonny.Playhouse.desktop',
+  output: 're.sonny.Playhouse.desktop',
   type: 'desktop',
   po_dir: '../po',
   install: true,
@@ -15,8 +15,8 @@ if desktop_utils.found()
 endif
 
 appstream_file = i18n.merge_file(
-  input: 're.sonny.Webground.metainfo.xml',
-  output: 're.sonny.Webground.metainfo.xml',
+  input: 're.sonny.Playhouse.metainfo.xml',
+  output: 're.sonny.Playhouse.metainfo.xml',
   po_dir: '../po',
   install: true,
   install_dir: join_paths(get_option('datadir'), 'metainfo')
@@ -25,8 +25,8 @@ appstream_file = i18n.merge_file(
 service_conf = configuration_data()
 service_conf.set('bindir', bindir)
 configure_file(
-  input: 're.sonny.Webground.service',
-  output: 're.sonny.Webground.service',
+  input: 're.sonny.Playhouse.service',
+  output: 're.sonny.Playhouse.service',
   configuration: service_conf,
   install_dir: join_paths(get_option('datadir'), 'dbus-1/services')
 )
@@ -38,7 +38,7 @@ if appstream_util.found()
   )
 endif
 
-install_data('re.sonny.Webground.gschema.xml',
+install_data('re.sonny.Playhouse.gschema.xml',
   install_dir: join_paths(get_option('datadir'), 'glib-2.0/schemas')
 )
 
@@ -49,5 +49,5 @@ if compile_schemas.found()
   )
 endif
 
-install_data('icons/re.sonny.Webground.svg', install_dir: join_paths(get_option('datadir'), 'icons/hicolor/scalable/apps'))
-install_data('icons/re.sonny.Webground-symbolic.svg', install_dir: join_paths(get_option('datadir'), 'icons/hicolor/symbolic/apps'))
+install_data('icons/re.sonny.Playhouse.svg', install_dir: join_paths(get_option('datadir'), 'icons/hicolor/scalable/apps'))
+install_data('icons/re.sonny.Playhouse-symbolic.svg', install_dir: join_paths(get_option('datadir'), 'icons/hicolor/symbolic/apps'))

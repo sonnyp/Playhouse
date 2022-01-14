@@ -1,10 +1,10 @@
 {
-  "app-id": "re.sonny.Webground",
+  "app-id": "re.sonny.Playhouse",
   "runtime": "org.gnome.Platform",
   "runtime-version": "master",
   "sdk": "org.gnome.Sdk",
   "sdk-extensions": ["org.freedesktop.Sdk.Extension.node16"],
-  "command": "re.sonny.Webground",
+  "command": "re.sonny.Playhouse",
   "build-options": {
     "append-path": "/usr/lib/sdk/node16/bin"
   },
@@ -30,7 +30,7 @@
       ]
     },
     {
-      "name": "Webground",
+      "name": "Playhouse",
       "buildsystem": "meson",
       "builddir": true,
       "sources": [

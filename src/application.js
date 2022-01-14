@@ -9,7 +9,7 @@ import { relativePath, loadStyleSheet } from "./util.js";
 
 export default function Application({ version, datadir }) {
   const application = new Adw.Application({
-    application_id: "re.sonny.Webground",
+    application_id: "re.sonny.Playhouse",
     // flags: Gio.ApplicationFlags.HANDLES_OPEN,
   });
 
@@ -17,7 +17,7 @@ export default function Application({ version, datadir }) {
     Window({
       application,
     });
-  })
+  });
 
   application.connect("startup", () => {
     loadStyleSheet(relativePath("./style.css"));
@@ -39,7 +39,7 @@ export default function Application({ version, datadir }) {
     null,
   );
 
-  application.set_option_context_description("<https://webground.sonny.re>");
+  application.set_option_context_description("<https://playhouse.sonny.re>");
   application.set_option_context_parameter_string("[URI…]");
   // TODO: Add examples
   // application.set_option_context_summary("");

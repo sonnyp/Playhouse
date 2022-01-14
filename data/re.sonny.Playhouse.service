@@ -1,0 +1,3 @@
+[D-BUS Service]
+Name=re.sonny.Playhouse
+Exec=@bindir@/re.sonny.Playhouse --gapplication-service

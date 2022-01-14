@@ -10,13 +10,13 @@ export default function About({ application, datadir, version }) {
     copyright: "Copyright 2021 Sonny Piers",
     license_type: Gtk.License.GPL_3_0_ONLY,
     version,
-    website: "https://webground.sonny.re",
+    website: "https://playhouse.sonny.re",
     transient_for: application.get_active_window(),
-    // Prevents input on Webground when clicking on a link
+    // Prevents input on Playhouse when clicking on a link
     // modal: true,
-    logo_icon_name: "re.sonny.Webground",
+    logo_icon_name: "re.sonny.Playhouse",
     // TRANSLATORS: eg. 'Translator Name <your.email@domain.com>' or 'Translator Name https://website.example'
-    translator_credits: _("translator-credits")
+    translator_credits: _("translator-credits"),
   });
   // dialog.add_credit_section("Contributors", [
   //   // Add yourself as
@@ -30,4 +30,3 @@ export default function About({ application, datadir, version }) {
 
   return { dialog };
 }
-

@@ -1,4 +1,4 @@
-# Webground
+# Playhouse
 
 A Playground for HTML/CSS/JavaScript
 

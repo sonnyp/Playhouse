@@ -1,3 +1,0 @@
-[D-BUS Service]
-Name=re.sonny.Webground
-Exec=@bindir@/re.sonny.Webground --gapplication-service

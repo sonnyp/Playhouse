@@ -162,7 +162,7 @@
         <attribute name="action">app.shortcuts</attribute>
       </item>
       <item>
-        <attribute name="label" translatable="yes">About Webground</attribute>
+        <attribute name="label" translatable="yes">About Playhouse</attribute>
         <attribute name="action">app.about</attribute>
       </item>
     </section>
