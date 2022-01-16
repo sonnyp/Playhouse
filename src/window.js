@@ -4,6 +4,7 @@ import GObject from "gi://GObject";
 import Gio from "gi://Gio";
 import WebKit from "gi://WebKit2?version=5.0";
 import Source from "gi://GtkSource?version=5";
+import Adw from 'gi://Adw?version=1'
 
 import { relativePath } from "./util.js";
 import Shortcuts from "./Shortcuts.js";
@@ -15,13 +16,18 @@ const settings = new Gio.Settings({
   path: "/re/sonny/Playhouse/",
 });
 
-export default function Welcome({ application }) {
+Source.init();
+
+const scheme_manager = Source.StyleSchemeManager.get_default()
+const language_manager = Source.LanguageManager.get_default();
+const style_manager = Adw.StyleManager.get_default();
+
+export default function Window({ application }) {
   // Solves
   // Invalid object type 'WebKitWebView'
   // Invalid object type 'GtkSourceView'
   // see https://stackoverflow.com/a/60128243
   new WebKit.WebView();
-  new Source.View();
 
   const builder = Gtk.Builder.new_from_file(relativePath("./window.ui"));
 
@@ -34,8 +40,6 @@ export default function Welcome({ application }) {
   const web_view = builder.get_object("web_view");
   WebView({ web_view });
 
-  const language_manager = Source.LanguageManager.get_default();
-
   const source_view_html = builder.get_object("source_view_html");
   source_view_html.buffer.set_language(language_manager.get_language("html"));
   source_view_html.buffer.set_text(`<p>Playhouse!</p>`.trim(), -1);
@@ -47,6 +51,19 @@ export default function Welcome({ application }) {
   source_view_javascript.buffer.set_language(
     language_manager.get_language("js"),
   );
+
+  const source_views = [source_view_html, source_view_css, source_view_javascript]
+
+  function updateStyle() {
+    const scheme = scheme_manager.get_scheme(style_manager.dark ? "Adwaita-dark" : "Adwaita");
+    source_views.forEach(({buffer}) => {
+      buffer.set_style_scheme(scheme)
+    });
+  }
+  updateStyle()
+  style_manager.connect('notify::dark', updateStyle)
+
+
 
   const devtools = builder.get_object("devtools");
   Devtools({ web_view, devtools, window });
