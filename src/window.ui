@@ -37,11 +37,6 @@
                     <property name="label">JavaScript</property>
                   </object>
                 </child>
-                <!-- <child>
-                  <object class="GtkToggleButton" id="button_console">
-                    <property name="label">Console</property>
-                  </object>
-                </child> -->
                 <child>
                   <object class="GtkToggleButton" id="button_output">
                     <property name="label">Output</property>
@@ -54,6 +49,12 @@
               <object class="GtkMenuButton" id="button_menu">
                 <property name="menu-model">menu_app</property>
                 <property name="icon-name">open-menu-symbolic</property>
+              </object>
+            </child>
+            <child type="end">
+              <object class="GtkButton" id="button_style_mode">
+                <property name="icon-name">weather-clear-night-symbolic</property>
+                <property name="label">Toggle dark mode</property>
               </object>
             </child>
           </object>

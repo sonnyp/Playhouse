@@ -1,7 +1,7 @@
 [Desktop Entry]
 # TRANSLATORS: Don't translate
 Name=Playhouse
-Comment=A playground for Web code
+Comment=A playground for HTML/CSS/JavaScript
 Exec=re.sonny.Playhouse
 Terminal=false
 Type=Application

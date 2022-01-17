@@ -73,3 +73,4 @@ export default function Application({ version, datadir }) {
 
   return application;
 }
+

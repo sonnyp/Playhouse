@@ -7,7 +7,7 @@
   xmlns="http://usefulinc.com/ns/doap#"
 >
   <name>Playhouse</name>
-  <shortdesc>A Playground for HTML/CSS/JavaScript</shortdesc>
+  <shortdesc>A playground for HTML/CSS/JavaScript</shortdesc>
   <description
   >Something clever.</description>
 

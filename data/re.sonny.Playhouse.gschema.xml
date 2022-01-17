@@ -7,7 +7,7 @@
     <key name="show-css" type="b">
       <default>false</default>
     </key>
-        <key name="show-javascript" type="b">
+    <key name="show-javascript" type="b">
       <default>false</default>
     </key>
     <key name="show-output" type="b">
@@ -16,5 +16,8 @@
     <key name="show-devtools" type="b">
       <default>true</default>
     </key>
-    </schema>
+    <key name="toggle-color-scheme" type="b">
+      <default>false</default>
+    </key>
+  </schema>
 </schemalist>

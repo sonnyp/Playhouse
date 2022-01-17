@@ -1,6 +1,6 @@
 # Playhouse
 
-A Playground for HTML/CSS/JavaScript
+A playground for HTML/CSS/JavaScript
 
 ![screenshot](data/screenshot.png)
 
@@ -10,9 +10,11 @@ This is a work in progress.
 
 Use [GNOME Builder](https://apps.gnome.org/app/org.gnome.Builder/).
 
+Press Ctrl+Shift+D for the GTK inspector.
+
 ## Copyright
 
-© 2021 [Sonny Piers](https://github.com/sonnyp)
+© 2022 [Sonny Piers](https://github.com/sonnyp)
 
 ## License
 

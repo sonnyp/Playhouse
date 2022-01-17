@@ -1,9 +1,0 @@
-#!/bin/sh
-. "$(dirname "$0")/_/husky.sh"
-
-xgettext -f po/POTFILES -o po/re.sonny.Playhouse.pot --no-wrap -cTRANSLATORS --from-code=UTF-8
-sed -i "s/same license as the PACKAGE package./same license as the re.sonny.Playhouse package./" po/re.sonny.Playhouse.pot
-sed -i "s/Project-Id-Version: PACKAGE VERSION/Project-Id-Version: re.sonny.Playhouse/" po/re.sonny.Playhouse.pot
-git add po/re.sonny.Playhouse.pot
-
-npx lint-staged
