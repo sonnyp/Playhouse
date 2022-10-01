@@ -15,7 +15,7 @@ blueprint_compiler = find_program(
 )
 
 configure_file(
-  input: 're.sonny.Playhouse',
+  input: 'bin.js',
   output: 're.sonny.Playhouse',
   configuration: bin_conf,
   install: true,

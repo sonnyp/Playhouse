@@ -1,11 +1,8 @@
 #!@GJS@ -m
 
-// -*- mode: js; -*-
-
 import { exit } from "system";
 import GLib from "gi://GLib";
 import { setConsoleLogDomain } from "console";
-import Gio from "gi://Gio";
 
 imports.package.init({
   name: "@app_id@",
