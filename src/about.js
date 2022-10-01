@@ -1,22 +1,46 @@
 import Gtk from "gi://Gtk";
+import Adw from "gi://Adw";
+import GLib from "gi://GLib";
 import { gettext as _ } from "gettext";
+import WebKit from "gi://WebKit2?version=5.0";
+
+import {
+  getGIRepositoryVersion,
+  getGjsVersion,
+  getGLibVersion,
+} from "../troll/src/util.js";
 
 export default function About({ application }) {
-  const dialog = new Gtk.AboutDialog({
+  const debug_info = `
+${GLib.get_os_info("ID")} ${GLib.get_os_info("VERSION_ID")}
+
+GJS ${getGjsVersion()}
+Adw ${getGIRepositoryVersion(Adw)}
+GTK ${getGIRepositoryVersion(Gtk)}
+GLib ${getGLibVersion()}
+WebKit2 ${getGIRepositoryVersion(WebKit)}
+`.trim();
+
+  const dialog = new Adw.AboutWindow({
     application,
-    authors: ["Sonny Piers https://sonny.re"],
-    // artists: ["Tobias Bernard <tbernard@gnome.org>"],
-    comments: _("A playground for HTML/CSS/JavaScript"),
+    application_name: "Playhouse",
+    developer_name: "Sonny Piers",
     copyright: "Copyright 2022 Sonny Piers",
     license_type: Gtk.License.GPL_3_0_ONLY,
     version: pkg.version,
-    website: "https://playhouse.sonny.re",
     transient_for: application.get_active_window(),
-    // Prevents input on Playhouse when clicking on a link
-    // modal: true,
-    logo_icon_name: "re.sonny.Playhouse",
+    modal: true,
+    website: "https://playhouse.sonny.re",
+    application_icon: pkg.name,
+    issue_url: "https://github.com/sonnyp/Playhouse/issues",
     // TRANSLATORS: eg. 'Translator Name <your.email@domain.com>' or 'Translator Name https://website.example'
     translator_credits: _("translator-credits"),
+    debug_info,
+    developers: ["Sonny Piers https://sonny.re"],
+    artists: [
+      "Jakub Steiner https://jimmac.eu",
+      "Tobias Bernard <tbernard@gnome.org>",
+    ],
   });
   // dialog.add_credit_section("Contributors", [
   //   // Add yourself as

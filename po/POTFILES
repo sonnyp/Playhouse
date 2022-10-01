@@ -13,3 +13,5 @@ src/application.js
 src/main.js
 src/window.blp
 src/ShortcutsWindow.blp
+
+troll/src/util.js
