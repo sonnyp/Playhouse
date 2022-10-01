@@ -1,13 +1,9 @@
 {
   "app-id": "re.sonny.Playhouse",
   "runtime": "org.gnome.Platform",
-  "runtime-version": "master",
+  "runtime-version": "43",
   "sdk": "org.gnome.Sdk",
-  "sdk-extensions": ["org.freedesktop.Sdk.Extension.node16"],
   "command": "re.sonny.Playhouse",
-  "build-options": {
-    "append-path": "/usr/lib/sdk/node16/bin"
-  },
   "finish-args": [
     "--share=ipc",
     "--socket=fallback-x11",
@@ -18,14 +14,15 @@
   ],
   "modules": [
     {
-      "name": "gtksourceview",
+      "name": "blueprint",
       "buildsystem": "meson",
-      "config-opts": ["-Dtests=false", "-Dexamples=false", "-Dvapi=false"],
+      "builddir": true,
       "sources": [
         {
-          "type": "archive",
-          "url": "https://download.gnome.org/sources/gtksourceview/5.2/gtksourceview-5.2.0.tar.xz",
-          "sha256": "c9b34fa02654f56ce22fa08827d89db4ba81631b2e6d7d31ea65d13c729430e9"
+          "type": "git",
+          "url": "https://gitlab.gnome.org/jwestman/blueprint-compiler.git",
+          "tag": "v0.4.0",
+          "commit": "75a6d95988736ec0471d22ceb07579c0cedac2ad"
         }
       ]
     },
@@ -36,7 +33,7 @@
       "sources": [
         {
           "type": "dir",
-          "path": "./"
+          "path": "."
         }
       ]
     }

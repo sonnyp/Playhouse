@@ -1,7 +1,7 @@
 import Gtk from "gi://Gtk";
 import { gettext as _ } from "gettext";
 
-export default function About({ application, datadir, version }) {
+export default function About({ application }) {
   const dialog = new Gtk.AboutDialog({
     application,
     authors: ["Sonny Piers https://sonny.re"],
@@ -9,7 +9,7 @@ export default function About({ application, datadir, version }) {
     comments: _("A playground for HTML/CSS/JavaScript"),
     copyright: "Copyright 2022 Sonny Piers",
     license_type: Gtk.License.GPL_3_0_ONLY,
-    version,
+    version: pkg.version,
     website: "https://playhouse.sonny.re",
     transient_for: application.get_active_window(),
     // Prevents input on Playhouse when clicking on a link

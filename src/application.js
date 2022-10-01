@@ -5,22 +5,20 @@ import GLib from "gi://GLib";
 import Window from "./window.js";
 import About from "./about.js";
 import ShortcutsWindow from "./ShortcutsWindow.js";
-import { relativePath, loadStyleSheet } from "./util.js";
 
-export default function Application({ version, datadir }) {
+import "./style.css";
+
+export default function Application() {
   const application = new Adw.Application({
     application_id: "re.sonny.Playhouse",
     // flags: Gio.ApplicationFlags.HANDLES_OPEN,
+    resource_base_path: "/re/sonny/Playouse/src",
   });
 
   application.connect("activate", () => {
     Window({
       application,
     });
-  });
-
-  application.connect("startup", () => {
-    loadStyleSheet(relativePath("./style.css"));
   });
 
   application.connect("handle-local-options", (self, options) => {
@@ -58,7 +56,7 @@ export default function Application({ version, datadir }) {
     parameter_type: null,
   });
   showAboutDialog.connect("activate", () => {
-    About({ application, datadir, version });
+    About({ application });
   });
   application.add_action(showAboutDialog);
 
@@ -73,4 +71,3 @@ export default function Application({ version, datadir }) {
 
   return application;
 }
-

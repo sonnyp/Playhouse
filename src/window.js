@@ -4,21 +4,22 @@ import GObject from "gi://GObject";
 import Gio from "gi://Gio";
 import WebKit from "gi://WebKit2?version=5.0";
 import Source from "gi://GtkSource?version=5";
-import Adw from 'gi://Adw?version=1'
+import Adw from "gi://Adw?version=1";
 
-import { relativePath } from "./util.js";
 import Shortcuts from "./Shortcuts.js";
 import Devtools from "./Devtools.js";
 import WebView from "./WebView.js";
 
+import resource from "./window.blp";
+
 const settings = new Gio.Settings({
-  schema_id: "re.sonny.Playhouse",
+  schema_id: pkg.name,
   path: "/re/sonny/Playhouse/",
 });
 
 Source.init();
 
-const scheme_manager = Source.StyleSchemeManager.get_default()
+const scheme_manager = Source.StyleSchemeManager.get_default();
 const language_manager = Source.LanguageManager.get_default();
 const style_manager = Adw.StyleManager.get_default();
 
@@ -29,10 +30,10 @@ export default function Window({ application }) {
   // see https://stackoverflow.com/a/60128243
   new WebKit.WebView();
 
-  const builder = Gtk.Builder.new_from_file(relativePath("./window.ui"));
+  const builder = Gtk.Builder.new_from_resource(resource);
 
   const window = builder.get_object("window");
-  if (__DEV__) window.add_css_class("devel");
+  // if (__DEV__) window.add_css_class("devel");
   window.set_application(application);
 
   // const source_view = builder.get_object("source_view");
@@ -42,15 +43,19 @@ export default function Window({ application }) {
 
   const source_view_html = builder.get_object("source_view_html");
   source_view_html.buffer.set_language(language_manager.get_language("html"));
-  source_view_html.buffer.set_text(`
+  source_view_html.buffer.set_text(
+    `
 <div>
   <p>Playhouse!</p>
 </div>
-`.trim(), -1);
+`.trim(),
+    -1,
+  );
 
   const source_view_css = builder.get_object("source_view_css");
   source_view_css.buffer.set_language(language_manager.get_language("css"));
-  source_view_css.buffer.set_text(`
+  source_view_css.buffer.set_text(
+    `
 html {
   font-family: sans-serif;
   width: 100%;
@@ -93,17 +98,20 @@ p {
 
 p:hover {
    transform: rotate(360deg);
-}`.trim(), -1)
+}`.trim(),
+    -1,
+  );
 
   const source_view_javascript = builder.get_object("source_view_javascript");
   source_view_javascript.buffer.set_language(
     language_manager.get_language("js"),
   );
-  source_view_javascript.buffer.set_text(`
+  source_view_javascript.buffer.set_text(
+    `
   console.log('Welcome to Playhouse!')
-  `, -1)
-
-
+  `,
+    -1,
+  );
 
   const devtools = builder.get_object("devtools");
   Devtools({ web_view, devtools, window });
@@ -113,42 +121,51 @@ p:hover {
   const button_javascript = builder.get_object("button_javascript");
   const button_output = builder.get_object("button_output");
   const button_devtools = builder.get_object("button_devtools");
-  const button_style_mode = builder.get_object("button_style_mode")
+  const button_style_mode = builder.get_object("button_style_mode");
 
-  const source_views = [source_view_html, source_view_css, source_view_javascript]
+  const source_views = [
+    source_view_html,
+    source_view_css,
+    source_view_javascript,
+  ];
 
   function updateStyle() {
-    const {dark} = style_manager;
+    const { dark } = style_manager;
     const scheme = scheme_manager.get_scheme(dark ? "Adwaita-dark" : "Adwaita");
-    source_views.forEach(({buffer}) => {
-      buffer.set_style_scheme(scheme)
+    source_views.forEach(({ buffer }) => {
+      buffer.set_style_scheme(scheme);
     });
 
     if (dark) {
-      button_style_mode.icon_name = 'weather-clear-symbolic'
+      button_style_mode.icon_name = "weather-clear-symbolic";
     } else {
-      button_style_mode.icon_name = 'weather-clear-night-symbolic'
+      button_style_mode.icon_name = "weather-clear-night-symbolic";
     }
   }
-  updateStyle()
-  style_manager.connect('notify::dark', updateStyle)
+  updateStyle();
+  style_manager.connect("notify::dark", updateStyle);
 
-  button_style_mode.connect(
-    "clicked", () => {
-      settings.set_boolean('toggle-color-scheme', !settings.get_boolean('toggle-color-scheme'));
-    }
-  )
+  button_style_mode.connect("clicked", () => {
+    settings.set_boolean(
+      "toggle-color-scheme",
+      !settings.get_boolean("toggle-color-scheme"),
+    );
+  });
 
   function setColorScheme() {
-    const toggle_color_scheme = settings.get_boolean('toggle-color-scheme');
+    const toggle_color_scheme = settings.get_boolean("toggle-color-scheme");
     if (toggle_color_scheme) {
-      style_manager.set_color_scheme(style_manager.dark ? Adw.ColorScheme.FORCE_LIGHT : Adw.ColorScheme.FORCE_DARK)
+      style_manager.set_color_scheme(
+        style_manager.dark
+          ? Adw.ColorScheme.FORCE_LIGHT
+          : Adw.ColorScheme.FORCE_DARK,
+      );
     } else {
-      style_manager.set_color_scheme(Adw.ColorScheme.DEFAULT)
+      style_manager.set_color_scheme(Adw.ColorScheme.DEFAULT);
     }
   }
-  setColorScheme()
-  settings.connect('changed', setColorScheme)
+  setColorScheme();
+  settings.connect("changed", setColorScheme);
 
   settings.bind(
     "show-html",

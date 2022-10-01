@@ -1,0 +1,19 @@
+using Gtk 4.0;
+
+ShortcutsWindow shortcuts_window {
+  modal: true;
+
+  ShortcutsSection {
+    ShortcutsGroup {
+      ShortcutsShortcut {
+        accelerator: "<Primary>question";
+        title: _("Keyboard Shortcuts");
+      }
+
+      ShortcutsShortcut {
+        accelerator: "<Primary>Q";
+        title: _("Quit");
+      }
+    }
+  }
+}

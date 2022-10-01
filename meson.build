@@ -1,4 +1,4 @@
-project('re.sonny.Playhouse',
+project('Playhouse',
   version: '0.1.0',
   meson_version: '>= 0.59.0',
   license: 'GPL-3.0-only'
@@ -7,11 +7,13 @@ project('re.sonny.Playhouse',
 gnome = import('gnome')
 i18n = import('i18n')
 
-application_id = meson.project_name()
+app_id = 're.sonny.Playhouse'
 prefix = get_option('prefix')
 bindir = join_paths(prefix, 'bin')
 datadir = join_paths(prefix, get_option('datadir'))
-pkgdatadir = join_paths(datadir, application_id)
+pkgdatadir = join_paths(datadir, app_id)
+
+message(pkgdatadir)
 
 subdir('data')
 subdir('src')

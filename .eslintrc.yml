@@ -1,5 +1,11 @@
 env:
-  es2020: true
+  es2022: true
+parser: "@babel/eslint-parser"
+parserOptions:
+  sourceType: module
+  requireConfigFile: false
+  babelOptions:
+    plugins: ["@babel/plugin-syntax-import-assertions"]
 extends:
   - "eslint:recommended"
   - "plugin:import/errors"
@@ -10,19 +16,20 @@ globals:
   Intl: readonly
   imports: readonly
   pkg: readonly
-  # log: readonly
+  log: readonly
   logError: readonly
-  # print: readonly
-  # printerr: readonly
+  print: readonly
+  printerr: readonly
   ARGV: readonly
   window: readonly
   globalThis: readonly
-  __DEV__: readonly
   console: readonly
   TextEncoder: readonly
   TextDecoder: readonly
-parserOptions:
-  sourceType: module
+  setInterval: readonly
+  setTimeout: readonly
+  clearInterval: readonly
+  clearTimeout: readonly
 rules:
   # https://eslint.org/docs/rules/no-unused-vars
   no-unused-vars: [error, { args: none }]
@@ -40,4 +47,4 @@ rules:
   # https://github.com/benmosher/eslint-plugin-import/
   import/extensions: ["error", "ignorePackages"]
   import/no-unresolved:
-    [2, { ignore: ["gi://*", "cairo", "gettext", "system"] }]
+    [2, { ignore: ["gi://*", "cairo", "gettext", "system", "resource://*"] }]
