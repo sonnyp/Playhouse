@@ -103,68 +103,77 @@ Adw.ApplicationWindow window {
       }
     }
 
-    Box {
-      orientation: horizontal;
-      vexpand: true;
-      homogeneous: true;
+    Paned paned {
+      orientation: vertical;
+      shrink-start-child: false;
+      shrink-end-child: false;
+      resize-start-child: true;
+      resize-end-child: true;
 
-      ScrolledWindow {
-        name: "panel_html";
-        .GtkSourceView source_view_html {
-          buffer: .GtkSourceBuffer {};
-          monospace: true;
-          auto-indent: true;
-          highlight-current-line: true;
-          indent-on-tab: true;
-          indent-width: 2;
-          insert-spaces-instead-of-tabs: true;
-          show-line-marks: true;
-          show-line-numbers: true;
-          smart-backspace: true;
-          tab-width: 2;
+      [start]
+      Box {
+        orientation: horizontal;
+        vexpand: true;
+        homogeneous: true;
+
+        ScrolledWindow {
+          name: "panel_html";
+          .GtkSourceView source_view_html {
+            buffer: .GtkSourceBuffer {};
+            monospace: true;
+            auto-indent: true;
+            highlight-current-line: true;
+            indent-on-tab: true;
+            indent-width: 2;
+            insert-spaces-instead-of-tabs: true;
+            show-line-marks: true;
+            show-line-numbers: true;
+            smart-backspace: true;
+            tab-width: 2;
+          }
         }
+
+        ScrolledWindow {
+          name: "panel_css";
+          .GtkSourceView source_view_css {
+            buffer: .GtkSourceBuffer {};
+            monospace: true;
+            auto-indent: true;
+            highlight-current-line: true;
+            indent-on-tab: true;
+            indent-width: 2;
+            insert-spaces-instead-of-tabs: true;
+            show-line-marks: true;
+            show-line-numbers: true;
+            smart-backspace: true;
+            tab-width: 2;
+          }
+        }
+
+        ScrolledWindow panel_javascript {
+          name: "panel_javascript";
+          .GtkSourceView source_view_javascript {
+            buffer: .GtkSourceBuffer {};
+            monospace: true;
+            auto-indent: true;
+            highlight-current-line: true;
+            indent-on-tab: true;
+            indent-width: 2;
+            insert-spaces-instead-of-tabs: true;
+            show-line-marks: true;
+            show-line-numbers: true;
+            smart-backspace: true;
+            tab-width: 2;
+          }
+        }
+
+        .WebKitWebView web_view {}
       }
 
-      ScrolledWindow {
-        name: "panel_css";
-        .GtkSourceView source_view_css {
-          buffer: .GtkSourceBuffer {};
-          monospace: true;
-          auto-indent: true;
-          highlight-current-line: true;
-          indent-on-tab: true;
-          indent-width: 2;
-          insert-spaces-instead-of-tabs: true;
-          show-line-marks: true;
-          show-line-numbers: true;
-          smart-backspace: true;
-          tab-width: 2;
-        }
+      [end]
+      Box devtools {
+        height-request: 50;
       }
-
-      ScrolledWindow panel_javascript {
-        name: "panel_javascript";
-        .GtkSourceView source_view_javascript {
-          buffer: .GtkSourceBuffer {};
-          monospace: true;
-          auto-indent: true;
-          highlight-current-line: true;
-          indent-on-tab: true;
-          indent-width: 2;
-          insert-spaces-instead-of-tabs: true;
-          show-line-marks: true;
-          show-line-numbers: true;
-          smart-backspace: true;
-          tab-width: 2;
-        }
-      }
-
-      .WebKitWebView web_view {}
-    }
-
-    Revealer devtools {
-      transition-type: slide_up;
-      reveal-child: true;
     }
   };
 }

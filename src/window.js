@@ -115,14 +115,12 @@ p:hover {
     -1,
   );
 
-  const devtools = builder.get_object("devtools");
-  Devtools({ web_view, devtools, window });
+  Devtools({ web_view, window, builder });
 
   const button_html = builder.get_object("button_html");
   const button_css = builder.get_object("button_css");
   const button_javascript = builder.get_object("button_javascript");
   const button_preview = builder.get_object("button_preview");
-  const button_devtools = builder.get_object("button_devtools");
 
   const source_views = [
     source_view_html,
@@ -164,12 +162,6 @@ p:hover {
     "active",
     Gio.SettingsBindFlags.DEFAULT,
   );
-  settings.bind(
-    "show-devtools",
-    button_devtools,
-    "active",
-    Gio.SettingsBindFlags.DEFAULT,
-  );
 
   button_html.bind_property(
     "active",
@@ -196,13 +188,6 @@ p:hover {
     "active",
     web_view,
     "visible",
-    GObject.BindingFlags.SYNC_CREATE,
-  );
-
-  button_devtools.bind_property(
-    "active",
-    devtools,
-    "reveal-child",
     GObject.BindingFlags.SYNC_CREATE,
   );
 
