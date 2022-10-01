@@ -6,7 +6,9 @@ import Window from "./window.js";
 import About from "./about.js";
 import ShortcutsWindow from "./ShortcutsWindow.js";
 
-import "./style.css";
+import { settings } from "./utils.js";
+
+// import "./style.css";
 
 export default function Application() {
   const application = new Adw.Application({
@@ -69,5 +71,15 @@ export default function Application() {
   });
   application.add_action(showShortCutsWindow);
 
+  application.add_action(settings.create_action("color-scheme"));
+
   return application;
 }
+
+const style_manager = Adw.StyleManager.get_default();
+function setColorScheme() {
+  const color_scheme = settings.get_int("color-scheme");
+  style_manager.set_color_scheme(color_scheme);
+}
+setColorScheme();
+settings.connect("changed::color-scheme", setColorScheme);

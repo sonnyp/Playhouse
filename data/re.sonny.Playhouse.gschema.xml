@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <schemalist gettext-domain="re.sonny.Playhouse">
   <schema id="re.sonny.Playhouse" path="/re/sonny/Playhouse/">
+    <key name="color-scheme" type="i">
+      <default>0</default>
+    </key>
     <key name="show-html" type="b">
       <default>true</default>
     </key>
@@ -15,9 +18,6 @@
     </key>
     <key name="show-devtools" type="b">
       <default>true</default>
-    </key>
-    <key name="toggle-color-scheme" type="b">
-      <default>false</default>
     </key>
   </schema>
 </schemalist>

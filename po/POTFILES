@@ -15,3 +15,6 @@ src/window.blp
 src/ShortcutsWindow.blp
 
 troll/src/util.js
+troll/src/widgets/ThemeSelector.blp
+troll/src/widgets/ThemeSelector.js
+src/utils.js

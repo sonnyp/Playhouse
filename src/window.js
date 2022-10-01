@@ -10,12 +10,11 @@ import Shortcuts from "./Shortcuts.js";
 import Devtools from "./Devtools.js";
 import WebView from "./WebView.js";
 
+import ThemeSelector from "../troll/src/widgets/ThemeSelector.js";
+
 import resource from "./window.blp";
 
-const settings = new Gio.Settings({
-  schema_id: pkg.name,
-  path: "/re/sonny/Playhouse/",
-});
+import { settings } from "./utils.js";
 
 Source.init();
 
@@ -33,8 +32,15 @@ export default function Window({ application }) {
   const builder = Gtk.Builder.new_from_resource(resource);
 
   const window = builder.get_object("window");
-  // if (__DEV__) window.add_css_class("devel");
+  if (pkg.name.endsWith("Devel")) {
+    window.add_css_class("devel");
+  }
   window.set_application(application);
+
+  // Popover menu theme switcher
+  const button_menu = builder.get_object("button_menu");
+  const popover = button_menu.get_popover();
+  popover.add_child(new ThemeSelector(), "themeswitcher");
 
   // const source_view = builder.get_object("source_view");
   // const source_buffer = builder.get_object("source_buffer");
@@ -121,7 +127,6 @@ p:hover {
   const button_javascript = builder.get_object("button_javascript");
   const button_output = builder.get_object("button_output");
   const button_devtools = builder.get_object("button_devtools");
-  const button_style_mode = builder.get_object("button_style_mode");
 
   const source_views = [
     source_view_html,
@@ -135,37 +140,9 @@ p:hover {
     source_views.forEach(({ buffer }) => {
       buffer.set_style_scheme(scheme);
     });
-
-    if (dark) {
-      button_style_mode.icon_name = "weather-clear-symbolic";
-    } else {
-      button_style_mode.icon_name = "weather-clear-night-symbolic";
-    }
   }
   updateStyle();
   style_manager.connect("notify::dark", updateStyle);
-
-  button_style_mode.connect("clicked", () => {
-    settings.set_boolean(
-      "toggle-color-scheme",
-      !settings.get_boolean("toggle-color-scheme"),
-    );
-  });
-
-  function setColorScheme() {
-    const toggle_color_scheme = settings.get_boolean("toggle-color-scheme");
-    if (toggle_color_scheme) {
-      style_manager.set_color_scheme(
-        style_manager.dark
-          ? Adw.ColorScheme.FORCE_LIGHT
-          : Adw.ColorScheme.FORCE_DARK,
-      );
-    } else {
-      style_manager.set_color_scheme(Adw.ColorScheme.DEFAULT);
-    }
-  }
-  setColorScheme();
-  settings.connect("changed", setColorScheme);
 
   settings.bind(
     "show-html",

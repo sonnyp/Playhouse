@@ -48,12 +48,6 @@ Adw.ApplicationWindow window {
         menu-model: menu_app;
         icon-name: "open-menu-symbolic";
       }
-
-      [end]
-      Button button_style_mode {
-        icon-name: "weather-clear-night-symbolic";
-        label: "Toggle dark mode";
-      }
     }
 
     Box {
@@ -126,6 +120,12 @@ Adw.ApplicationWindow window {
 }
 
 menu menu_app {
+  section {
+    item {
+      custom: "themeswitcher";
+    }
+  }
+
   section {
     item {
       label: _("Keyboard Shortcuts");
