@@ -8,13 +8,13 @@ import ShortcutsWindow from "./ShortcutsWindow.js";
 
 import { settings } from "./utils.js";
 
-// import "./style.css";
+import "./style.css";
 
 export default function Application() {
   const application = new Adw.Application({
     application_id: "re.sonny.Playhouse",
     // flags: Gio.ApplicationFlags.HANDLES_OPEN,
-    resource_base_path: "/re/sonny/Playouse/src",
+    resource_base_path: "/re/sonny/Playhouse/src",
   });
 
   application.connect("activate", () => {

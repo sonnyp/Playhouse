@@ -1,45 +1,98 @@
 using Gtk 4.0;
 using Adw 1;
+using GtkSource 5;
+using WebKit2 5.0;
 
 Adw.ApplicationWindow window {
   default-width: 800;
   default-height: 600;
   maximized: true;
-  content:
-  Box {
+  content: Box {
     orientation: vertical;
 
     Adw.HeaderBar {
       [start]
       ToggleButton button_devtools {
-        label: "Devtools";
-        active: true;
-      }
+      child: Adw.ButtonContent {
+        icon-name: "re.sonny.Playhouse-symbolic";
+        label: _("_Developer Tools");
+        use-underline: true;
+      };
+      tooltip-text: _("Developer Tools (Ctrl+Shift+I)");
+    }
 
       [title]
       Box {
+        spacing: 6;
         orientation: horizontal;
-
-        styles [
-          "linked",
-        ]
+        homogeneous: true;
 
         ToggleButton button_html {
-          label: "HTML";
-          active: true;
+          child: Box {
+            halign: center;
+
+            Image {
+              icon-name: "re.sonny.Playhouse-symbolic";
+            }
+
+            Label {
+              label: _("_HTML");
+              use-underline: true;
+            }
+          };
+
+          styles ["flat", "view-toggler"]
         }
 
         ToggleButton button_css {
-          label: "CSS";
+          child: Box {
+            halign: center;
+
+            Image {
+            icon-name: "re.sonny.Playhouse-symbolic";
+            }
+
+            Label {
+              label: _("_CSS");
+              use-underline: true;
+            }
+          };
+
+          styles ["flat", "view-toggler"]
         }
 
         ToggleButton button_javascript {
-          label: "JavaScript";
+          child: Box {
+            halign: center;
+
+            Image {
+            icon-name: "re.sonny.Playhouse-symbolic";
+            }
+
+            Label {
+              label: _("_JavaScript");
+              use-underline: true;
+            }
+          };
+
+          styles ["flat", "view-toggler"]
         }
 
-        ToggleButton button_output {
-          label: "Output";
-          active: true;
+        ToggleButton button_preview {
+          child: Box {
+            halign: center;
+
+            Image {
+              icon-name: "re.sonny.Playhouse-symbolic";
+            }
+
+            Label {
+              label: _("_Preview");
+              use-underline: true;
+            }
+          };
+
+          styles ["flat", "view-toggler"]
         }
       }
 
@@ -56,56 +109,53 @@ Adw.ApplicationWindow window {
       homogeneous: true;
 
       ScrolledWindow {
+        name: "panel_html";
         .GtkSourceView source_view_html {
-          buffer:           .GtkSourceBuffer {
-          }
-
-          ;
-          monospace: "true";
-          auto-indent: "true";
-          background-pattern: "grid";
-          highlight-current-line: "true";
-          indent-on-tab: "true";
-          indent-width: "2";
-          insert-spaces-instead-of-tabs: "true";
-          show-line-marks: "true";
-          show-line-numbers: "true";
-          smart-backspace: "true";
-          tab-width: "2";
+          buffer: .GtkSourceBuffer {};
+          monospace: true;
+          auto-indent: true;
+          highlight-current-line: true;
+          indent-on-tab: true;
+          indent-width: 2;
+          insert-spaces-instead-of-tabs: true;
+          show-line-marks: true;
+          show-line-numbers: true;
+          smart-backspace: true;
+          tab-width: 2;
         }
       }
 
       ScrolledWindow {
+        name: "panel_css";
         .GtkSourceView source_view_css {
           buffer: .GtkSourceBuffer {};
-          monospace: "true";
-          auto-indent: "true";
-          background-pattern: "grid";
-          highlight-current-line: "true";
-          indent-on-tab: "true";
-          indent-width: "2";
-          insert-spaces-instead-of-tabs: "true";
-          show-line-marks: "true";
-          show-line-numbers: "true";
-          smart-backspace: "true";
-          tab-width: "2";
+          monospace: true;
+          auto-indent: true;
+          highlight-current-line: true;
+          indent-on-tab: true;
+          indent-width: 2;
+          insert-spaces-instead-of-tabs: true;
+          show-line-marks: true;
+          show-line-numbers: true;
+          smart-backspace: true;
+          tab-width: 2;
         }
       }
 
-      ScrolledWindow {
+      ScrolledWindow panel_javascript {
+        name: "panel_javascript";
         .GtkSourceView source_view_javascript {
           buffer: .GtkSourceBuffer {};
-          monospace: "true";
-          auto-indent: "true";
-          background-pattern: "grid";
-          highlight-current-line: "true";
-          indent-on-tab: "true";
-          indent-width: "2";
-          insert-spaces-instead-of-tabs: "true";
-          show-line-marks: "true";
-          show-line-numbers: "true";
-          smart-backspace: "true";
-          tab-width: "2";
+          monospace: true;
+          auto-indent: true;
+          highlight-current-line: true;
+          indent-on-tab: true;
+          indent-width: 2;
+          insert-spaces-instead-of-tabs: true;
+          show-line-marks: true;
+          show-line-numbers: true;
+          smart-backspace: true;
+          tab-width: 2;
         }
       }
 

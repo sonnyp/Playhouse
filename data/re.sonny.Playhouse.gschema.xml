@@ -13,7 +13,7 @@
     <key name="show-javascript" type="b">
       <default>false</default>
     </key>
-    <key name="show-output" type="b">
+    <key name="show-preview" type="b">
       <default>true</default>
     </key>
     <key name="show-devtools" type="b">

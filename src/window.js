@@ -1,5 +1,4 @@
 import Gtk from "gi://Gtk";
-// import Gdk from "gi://Gdk";
 import GObject from "gi://GObject";
 import Gio from "gi://Gio";
 import WebKit from "gi://WebKit2?version=5.0";
@@ -16,8 +15,6 @@ import resource from "./window.blp";
 
 import { settings } from "./utils.js";
 
-Source.init();
-
 const scheme_manager = Source.StyleSchemeManager.get_default();
 const language_manager = Source.LanguageManager.get_default();
 const style_manager = Adw.StyleManager.get_default();
@@ -25,7 +22,6 @@ const style_manager = Adw.StyleManager.get_default();
 export default function Window({ application }) {
   // Solves
   // Invalid object type 'WebKitWebView'
-  // Invalid object type 'GtkSourceView'
   // see https://stackoverflow.com/a/60128243
   new WebKit.WebView();
 
@@ -125,7 +121,7 @@ p:hover {
   const button_html = builder.get_object("button_html");
   const button_css = builder.get_object("button_css");
   const button_javascript = builder.get_object("button_javascript");
-  const button_output = builder.get_object("button_output");
+  const button_preview = builder.get_object("button_preview");
   const button_devtools = builder.get_object("button_devtools");
 
   const source_views = [
@@ -163,8 +159,8 @@ p:hover {
     Gio.SettingsBindFlags.DEFAULT,
   );
   settings.bind(
-    "show-output",
-    button_output,
+    "show-preview",
+    button_preview,
     "active",
     Gio.SettingsBindFlags.DEFAULT,
   );
@@ -196,7 +192,7 @@ p:hover {
     GObject.BindingFlags.SYNC_CREATE,
   );
 
-  button_output.bind_property(
+  button_preview.bind_property(
     "active",
     web_view,
     "visible",
