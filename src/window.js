@@ -13,10 +13,9 @@ import ThemeSelector from "../troll/src/widgets/ThemeSelector.js";
 
 import resource from "./window.blp";
 
-import { settings } from "./utils.js";
+import { prepareSourceView, settings, createDataDir } from "./utils.js";
 
 const scheme_manager = Source.StyleSchemeManager.get_default();
-const language_manager = Source.LanguageManager.get_default();
 const style_manager = Adw.StyleManager.get_default();
 
 export default function Window({ application }) {
@@ -24,6 +23,8 @@ export default function Window({ application }) {
   // Invalid object type 'WebKitWebView'
   // see https://stackoverflow.com/a/60128243
   new WebKit.WebView();
+
+  const data_dir = createDataDir();
 
   const builder = Gtk.Builder.new_from_resource(resource);
 
@@ -44,20 +45,23 @@ export default function Window({ application }) {
   WebView({ web_view });
 
   const source_view_html = builder.get_object("source_view_html");
-  source_view_html.buffer.set_language(language_manager.get_language("html"));
-  source_view_html.buffer.set_text(
-    `
+  prepareSourceView(source_view_html, {
+    data_dir,
+    lang: "html",
+    ext: "html",
+    placeholder: `
 <div>
   <p>Playhouse!</p>
 </div>
-`.trim(),
-    -1,
-  );
+    `.trim(),
+  });
 
   const source_view_css = builder.get_object("source_view_css");
-  source_view_css.buffer.set_language(language_manager.get_language("css"));
-  source_view_css.buffer.set_text(
-    `
+  prepareSourceView(source_view_css, {
+    data_dir,
+    lang: "css",
+    ext: "css",
+    placeholder: `
 html {
   font-family: sans-serif;
   width: 100%;
@@ -99,21 +103,19 @@ p {
 }
 
 p:hover {
-   transform: rotate(360deg);
+    transform: rotate(360deg);
 }`.trim(),
-    -1,
-  );
+  });
 
   const source_view_javascript = builder.get_object("source_view_javascript");
-  source_view_javascript.buffer.set_language(
-    language_manager.get_language("js"),
-  );
-  source_view_javascript.buffer.set_text(
-    `
-  console.log('Welcome to Playhouse!')
-  `,
-    -1,
-  );
+  prepareSourceView(source_view_javascript, {
+    data_dir,
+    lang: "js",
+    ext: "js",
+    placeholder: `
+  console.log('Welcome to Playhouse!');
+    `.trim(),
+  });
 
   Devtools({ web_view, window, builder });
 

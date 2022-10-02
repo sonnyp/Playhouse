@@ -5,6 +5,6 @@ build:
 	cd troll && npm install
 
 lint:
-	./node_modules/.bin/eslint --max-warnings=0 ..
+	./node_modules/.bin/eslint --max-warnings=0 .
 
 test: lint

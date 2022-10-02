@@ -16,9 +16,10 @@ Features:
 
 - HTML/CSS/JavaScript editors
 - live Web preview
+- auto-save
 - standard keyboard shortcuts
-- Developer Tools
-- Dark/light mode support
+- developer tools
+- dark/light mode support
 
 ## Tips an tricks
 
@@ -47,6 +48,14 @@ import("https://unpkg.com/jquery@3.6.1/dist/jquery.js")
 Use [GNOME Builder](https://apps.gnome.org/app/org.gnome.Builder/).
 
 Press Ctrl+Shift+D for the GTK inspector.
+
+## Credits
+
+Playhouse would not be possible without
+
+GTK, GLib, Flatpak, GtkSourceView, libadwaita, GJS, Blueprint, WebkitGTK
+
+and the GNOME community 🖤
 
 ## Copyright
 

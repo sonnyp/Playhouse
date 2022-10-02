@@ -13,10 +13,11 @@
     <p>Playhouse make it easy to prototype, teach, design, learn and build Web things.</p>
     <ul>
       <li>HTML/CSS/JavaScript editors</li>
+      <li>auto-save</li>
       <li>live Web preview</li>
       <li>standard keyboard shortcuts</li>
-      <li>Developer Tools</li>
-      <li>Dark/light mode support</li>
+      <li>developer tools</li>
+      <li>dark/light mode support</li>
     </ul>
   </description>
   <url type="homepage">https://playhouse.sonny.re</url>
