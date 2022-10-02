@@ -14,14 +14,6 @@ if desktop_utils.found()
   )
 endif
 
-appstream_file = i18n.merge_file(
-  input: 're.sonny.Playhouse.metainfo.xml',
-  output: 're.sonny.Playhouse.metainfo.xml',
-  po_dir: '../po',
-  install: true,
-  install_dir: join_paths(get_option('datadir'), 'metainfo')
-)
-
 service_conf = configuration_data()
 service_conf.set('bindir', bindir)
 configure_file(
@@ -30,6 +22,21 @@ configure_file(
   configuration: service_conf,
   install_dir: join_paths(get_option('datadir'), 'dbus-1/services')
 )
+
+appstream_file = i18n.merge_file(
+  input: 're.sonny.Playhouse.metainfo.xml',
+  output: 're.sonny.Playhouse.metainfo.xml',
+  po_dir: '../po',
+  install: true,
+  install_dir: join_paths(get_option('datadir'), 'metainfo')
+)
+
+appstream_cli = find_program('appstreamcli', required: false)
+if appstream_cli.found()
+  test('Validate metainfo file', appstream_cli,
+    args: ['validate', '--override=release-time-missing=info', '--no-net', appstream_file]
+  )
+endif
 
 appstream_util = find_program('appstream-util', required: false)
 if appstream_util.found()

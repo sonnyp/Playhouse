@@ -44,13 +44,13 @@ export default function Devtools({ web_view, window, builder }) {
     return true;
   }
 
-  ["attach", "bring-to-front", "detach", "open-window", "closed"].forEach(
-    (event) => {
-      inspector.connect(event, () => {
-        console.log(event);
-      });
-    },
-  );
+  // ["attach", "bring-to-front", "detach", "open-window", "closed"].forEach(
+  //   (event) => {
+  //     inspector.connect(event, () => {
+  //       console.log(event);
+  //     });
+  //   },
+  // );
 
   inspector.connect("attach", enableInspector);
   inspector.connect("open-window", enableInspector);

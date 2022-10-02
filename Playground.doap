@@ -4,12 +4,10 @@
   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
   xmlns:foaf="http://xmlns.com/foaf/0.1/"
   xmlns:gnome="http://api.gnome.org/doap-extensions#"
-  xmlns="http://usefulinc.com/ns/doap#"
->
+  xmlns="http://usefulinc.com/ns/doap#">
   <name>Playhouse</name>
   <shortdesc>A playground for HTML/CSS/JavaScript</shortdesc>
-  <description
-  >Something clever.</description>
+  <description>Playhouse make it easy to prototype, teach, design, learn and build Web things.</description>
 
   <homepage rdf:resource="https://playhouse.sonny.re" />
   <bug-database rdf:resource="https://playhouse.sonny.re/feedback" />
@@ -18,7 +16,7 @@
   <maintainer>
     <foaf:Person>
       <foaf:name>Sonny Piers</foaf:name>
-      <foaf:mbox rdf:resource="mailto:sonny@fastmail.net" />
+      <foaf:mbox rdf:resource="mailto:sonnyp@gnome.org" />
       <foaf:account>
         <foaf:OnlineAccount>
             <foaf:accountServiceHomepage rdf:resource="https://github.com/" />
@@ -27,9 +25,7 @@
       </foaf:account>
       <foaf:account>
         <foaf:OnlineAccount>
-          <foaf:accountServiceHomepage
-            rdf:resource="https://gitlab.gnome.org"
-          />
+          <foaf:accountServiceHomepage rdf:resource="https://gitlab.gnome.org"/>
           <foaf:accountName>sonny</foaf:accountName>
         </foaf:OnlineAccount>
       </foaf:account>
