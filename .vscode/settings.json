@@ -7,8 +7,8 @@
         ".flatpak/**": true,
         "_build/**": true
     },
+    "editor.formatOnSave": true,
     "mesonbuild.configureOnOpen": false,
     "mesonbuild.buildFolder": "_build",
-    "mesonbuild.mesonPath": "/home/sonny/Projects/Playhouse/.flatpak/meson.sh",
-    "editor.formatOnSave": true
+    "mesonbuild.mesonPath": "/home/sonny/Projects/Playhouse/.flatpak/meson.sh"
 }

@@ -15,6 +15,12 @@ import resource from "./window.blp";
 
 import { prepareSourceView, settings, createDataDir } from "./utils.js";
 
+import "./icons/css-symbolic.svg" assert { type: "icon" };
+import "./icons/devtools-symbolic.svg" assert { type: "icon" };
+import "./icons/html-symbolic.svg" assert { type: "icon" };
+import "./icons/javascript-symbolic.svg" assert { type: "icon" };
+import "./icons/preview-symbolic.svg" assert { type: "icon" };
+
 const scheme_manager = Source.StyleSchemeManager.get_default();
 const style_manager = Adw.StyleManager.get_default();
 

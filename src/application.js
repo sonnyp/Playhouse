@@ -14,7 +14,6 @@ export default function Application() {
   const application = new Adw.Application({
     application_id: "re.sonny.Playhouse",
     // flags: Gio.ApplicationFlags.HANDLES_OPEN,
-    resource_base_path: "/re/sonny/Playhouse/src",
   });
 
   application.connect("activate", () => {

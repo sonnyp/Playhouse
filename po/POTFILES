@@ -2,19 +2,17 @@ data/re.sonny.Playhouse.desktop
 data/re.sonny.Playhouse.gschema.xml
 data/re.sonny.Playhouse.metainfo.xml
 
-src/util.js
 src/Shortcuts.js
+troll/src/util.js
+src/utils.js
 src/Devtools.js
 src/WebView.js
+troll/src/widgets/ThemeSelector.blp
+troll/src/widgets/ThemeSelector.js
+src/window.blp
 src/window.js
 src/about.js
+src/ShortcutsWindow.blp
 src/ShortcutsWindow.js
 src/application.js
 src/main.js
-src/window.blp
-src/ShortcutsWindow.blp
-
-troll/src/util.js
-troll/src/widgets/ThemeSelector.blp
-troll/src/widgets/ThemeSelector.js
-src/utils.js

@@ -15,7 +15,7 @@ setConsoleLogDomain(pkg.name);
 GLib.set_application_name("Playhouse");
 
 const loop = new GLib.MainLoop(null, false);
-import("resource:///re/sonny/Playhouse/src/main.js")
+import("resource:///re/sonny/Playhouse/main.js")
   .then((main) => {
     // Workaround for issue
     // https://gitlab.gnome.org/GNOME/gjs/-/issues/468

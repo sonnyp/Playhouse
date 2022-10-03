@@ -56,4 +56,5 @@ if compile_schemas.found()
   )
 endif
 
-install_subdir('icons/hicolor', install_dir : join_paths(get_option('datadir'), 'icons'))
+install_data('icons/re.sonny.Playhouse-symbolic.svg', install_dir: join_paths(get_option('datadir'), 'icons/hicolor/symbolic/apps'))
+install_data('icons/re.sonny.Playhouse.svg', install_dir: join_paths(get_option('datadir'), 'icons/hicolor/scalable/apps'))
