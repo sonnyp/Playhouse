@@ -1,4 +1,4 @@
-<img style="vertical-align: middle;" src="data/icons/hicolor/scalable/apps/re.sonny.Playhouse.svg" width="120" height="120" align="left">
+<img style="vertical-align: middle;" src="data/icons/re.sonny.Playhouse.svg" width="120" height="120" align="left">
 
 # Playhouse
 
@@ -6,7 +6,7 @@ A playground for HTML/CSS/JavaScript
 
 ![screenshot](data/screenshot.png)
 
-<!-- <a href='https://beta.flathub.org/apps/details/re.sonny.Playhouse'><img width='180' height='60' alt='Download on Flathub' src='https://flathub.org/assets/badges/flathub-badge-en.svg'/></a> -->
+<a href='https://beta.flathub.org/apps/details/re.sonny.Playhouse'><img width='180' height='60' alt='Download on Flathub' src='https://flathub.org/assets/badges/flathub-badge-en.svg'/></a>
 
 ## About
 

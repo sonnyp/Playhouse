@@ -7,13 +7,6 @@ bin_conf.set('libdir', join_paths(get_option('prefix'), get_option('libdir')))
 bin_conf.set('datadir', datadir)
 bin_conf.set('pkgdatadir', pkgdatadir)
 
-blueprint_compiler = find_program(
-  # Flatpak
-  '/app/bin/blueprint-compiler',
-  # host
-  '../blueprint-compiler/blueprint-compiler.py'
-)
-
 configure_file(
   input: 'bin.js',
   output: 're.sonny.Playhouse',
@@ -22,6 +15,10 @@ configure_file(
   install_dir: get_option('bindir')
 )
 
+blueprint_compiler = find_program(
+  '/app/bin/blueprint-compiler',
+  'blueprint-compiler'
+)
 gjspack = find_program('../troll/gjspack/bin/gjspack')
 gresource = custom_target('gjspack',
   input: ['main.js', '../po/POTFILES'],
