@@ -2,7 +2,7 @@
 
 # Playhouse
 
-A playground for HTML/CSS/JavaScript
+Playground for HTML/CSS/JavaScript
 
 ![screenshot](data/screenshot.png)
 

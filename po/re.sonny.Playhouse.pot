@@ -23,7 +23,7 @@ msgid "Playhouse"
 msgstr ""
 
 #: data/re.sonny.Playhouse.desktop:5
-msgid "A playground for Web code"
+msgid "Playground for Web code"
 msgstr ""
 
 #. TRANSLATORS: Don't translate
@@ -32,7 +32,7 @@ msgid "JS Bin;CodePen;JSFiddle;"
 msgstr ""
 
 #: data/re.sonny.Playhouse.metainfo.xml:10 src/about.js:9
-msgid "A Playground for HTML/CSS/JavaScript"
+msgid "Playground for HTML/CSS/JavaScript"
 msgstr ""
 
 #: data/re.sonny.Playhouse.metainfo.xml:13

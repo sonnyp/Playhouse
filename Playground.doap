@@ -6,7 +6,7 @@
   xmlns:gnome="http://api.gnome.org/doap-extensions#"
   xmlns="http://usefulinc.com/ns/doap#">
   <name>Playhouse</name>
-  <shortdesc>A playground for HTML/CSS/JavaScript</shortdesc>
+  <shortdesc>Playground for HTML/CSS/JavaScript</shortdesc>
   <description>Playhouse make it easy to prototype, teach, design, learn and build Web things.</description>
 
   <homepage rdf:resource="https://playhouse.sonny.re" />
