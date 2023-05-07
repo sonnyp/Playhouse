@@ -1,7 +1,7 @@
 import Gtk from "gi://Gtk";
 import GObject from "gi://GObject";
 import Gio from "gi://Gio";
-import WebKit from "gi://WebKit2?version=5.0";
+import WebKit from "gi://WebKit?version=6.0";
 import Source from "gi://GtkSource?version=5";
 import Adw from "gi://Adw?version=1";
 
@@ -13,7 +13,7 @@ import ThemeSelector from "../troll/src/widgets/ThemeSelector.js";
 
 import resource from "./window.blp";
 
-import { prepareSourceView, settings, createDataDir } from "./utils.js";
+import { prepareSourceView, createDataDir, settings } from "./utils.js";
 
 import "./icons/css-symbolic.svg" assert { type: "icon" };
 import "./icons/devtools-symbolic.svg" assert { type: "icon" };

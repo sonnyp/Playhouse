@@ -2,7 +2,7 @@ import Gtk from "gi://Gtk";
 import Adw from "gi://Adw";
 import GLib from "gi://GLib";
 import { gettext as _ } from "gettext";
-import WebKit from "gi://WebKit2?version=5.0";
+import WebKit from "gi://WebKit";
 
 import {
   getGIRepositoryVersion,
@@ -18,7 +18,7 @@ GJS ${getGjsVersion()}
 Adw ${getGIRepositoryVersion(Adw)}
 GTK ${getGIRepositoryVersion(Gtk)}
 GLib ${getGLibVersion()}
-WebKit2 ${getGIRepositoryVersion(WebKit)}
+WebKit ${getGIRepositoryVersion(WebKit)}
 `.trim();
 
   const dialog = new Adw.AboutWindow({

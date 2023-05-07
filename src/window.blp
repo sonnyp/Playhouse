@@ -1,7 +1,7 @@
 using Gtk 4.0;
 using Adw 1;
 using GtkSource 5;
-using WebKit2 5.0;
+using WebKit 6.0;
 
 Adw.ApplicationWindow window {
   default-width: 800;
@@ -118,8 +118,8 @@ Adw.ApplicationWindow window {
 
         ScrolledWindow {
           name: "panel_html";
-          .GtkSourceView source_view_html {
-            buffer: .GtkSourceBuffer {};
+          GtkSource.View source_view_html {
+            buffer: GtkSource.Buffer {};
             monospace: true;
             auto-indent: true;
             highlight-current-line: true;
@@ -135,8 +135,8 @@ Adw.ApplicationWindow window {
 
         ScrolledWindow {
           name: "panel_css";
-          .GtkSourceView source_view_css {
-            buffer: .GtkSourceBuffer {};
+          GtkSource.View source_view_css {
+            buffer: GtkSource.Buffer {};
             monospace: true;
             auto-indent: true;
             highlight-current-line: true;
@@ -152,8 +152,8 @@ Adw.ApplicationWindow window {
 
         ScrolledWindow {
           name: "panel_javascript";
-          .GtkSourceView source_view_javascript {
-            buffer: .GtkSourceBuffer {};
+          GtkSource.View source_view_javascript {
+            buffer: GtkSource.Buffer {};
             monospace: true;
             auto-indent: true;
             highlight-current-line: true;
@@ -167,7 +167,7 @@ Adw.ApplicationWindow window {
           }
         }
 
-        .WebKitWebView web_view {}
+        WebKit.WebView web_view {}
       }
 
       [end]

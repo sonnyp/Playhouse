@@ -13,6 +13,9 @@
   <bug-database rdf:resource="https://playhouse.sonny.re/feedback" />
   <programming-language>JavaScript</programming-language>
 
+  <platform>GTK 4</platform>
+  <platform>Libadwaita</platform>
+
   <maintainer>
     <foaf:Person>
       <foaf:name>Sonny Piers</foaf:name>

@@ -6,7 +6,7 @@ A playground for HTML/CSS/JavaScript
 
 ![screenshot](data/screenshot.png)
 
-<a href='https://beta.flathub.org/apps/details/re.sonny.Playhouse'><img width='180' height='60' alt='Download on Flathub' src='https://flathub.org/assets/badges/flathub-badge-en.svg'/></a>
+<a href='https://flathub.org/apps/re.sonny.Playhouse'><img width='240' height='80' alt='Download on Flathub' src='https://dl.flathub.org/assets/badges/flathub-badge-en.svg'/></a>
 
 ## About
 

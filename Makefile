@@ -1,4 +1,10 @@
-.PHONY: build lint test
+.PHONY: dev build lint test
+
+dev:
+	@ # mkdir -p ~/.local/share/fonts
+	@ # fc-cache ~/.local/share/fonts/
+	@ glib-compile-schemas --strict ./data
+	@ ./src/local.js
 
 build:
 	npm install

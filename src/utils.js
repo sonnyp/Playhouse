@@ -7,7 +7,7 @@ import { promiseTask } from "../troll/src/util.js";
 const language_manager = Source.LanguageManager.get_default();
 
 export const settings = new Gio.Settings({
-  schema_id: pkg.name,
+  schema_id: "re.sonny.Playhouse",
   path: "/re/sonny/Playhouse/",
 });
 
