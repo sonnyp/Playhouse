@@ -35,7 +35,7 @@ export default function Window({ application }) {
   const builder = Gtk.Builder.new_from_resource(resource);
 
   const window = builder.get_object("window");
-  if (pkg.name.endsWith("Devel")) {
+  if (__DEV__) {
     window.add_css_class("devel");
   }
   window.set_application(application);
@@ -45,10 +45,8 @@ export default function Window({ application }) {
   const popover = button_menu.get_popover();
   popover.add_child(new ThemeSelector(), "themeswitcher");
 
-  // const source_view = builder.get_object("source_view");
-  // const source_buffer = builder.get_object("source_buffer");
-  const web_view = builder.get_object("web_view");
-  WebView({ web_view });
+  const webview = builder.get_object("webview");
+  WebView({ webview });
 
   const source_view_html = builder.get_object("source_view_html");
   prepareSourceView(source_view_html, {
@@ -123,7 +121,7 @@ p:hover {
     `.trim(),
   });
 
-  Devtools({ web_view, window, builder });
+  Devtools({ window, builder });
 
   const button_html = builder.get_object("button_html");
   const button_css = builder.get_object("button_css");
@@ -194,7 +192,7 @@ p:hover {
 
   button_preview.bind_property(
     "active",
-    web_view,
+    webview,
     "visible",
     GObject.BindingFlags.SYNC_CREATE,
   );
@@ -221,31 +219,9 @@ p:hover {
       </html>
     `;
 
-    web_view.load_html(html, null);
+    webview.load_html(html, null);
   }
   updatePreview();
-
-  // function updateJavaScript() {}
-
-  // function updateCSS() {
-  //   const stylesheet = new WebKit.UserStyleSheet(
-  //     // JS ERROR: Error: Cannot convert string to array of 'utf8'
-  //     source_view_css.buffer.text,
-  //     WebKit.UserContentInjectedFrames.TOP_FRAME,
-  //     WebKit.UserStyleLevel.AUTHOR,
-  //     "*",
-  //     null,
-  //   );
-
-  //   const content_manager = web_view.getUserContentManager();
-  //   content_manager.addStyleSheet(stylesheet);
-  // }
-
-  // Use bind
-  // web_view.connect("notify::title", () => {
-  //   window.title = web_view.title;
-  // });
-  // TODO: connect favicon
 
   window.present();
 

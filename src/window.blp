@@ -167,12 +167,16 @@ Adw.ApplicationWindow window {
           }
         }
 
-        WebKit.WebView web_view {}
+        WebKit.WebView webview {}
       }
 
       [end]
       Box devtools {
         height-request: 50;
+        WebKit.WebView webview_devtools {
+          vexpand: true;
+          hexpand: true;
+        }
       }
     }
   };

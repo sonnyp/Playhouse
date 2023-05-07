@@ -4,6 +4,8 @@ import GLib from "gi://GLib";
 
 pkg.initGettext();
 
+GLib.setenv("WEBKIT_INSPECTOR_HTTP_SERVER", "127.0.0.1:54424", false);
+
 export function main(argv) {
   const application = Application();
 
