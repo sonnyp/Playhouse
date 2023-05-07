@@ -1,5 +1,5 @@
 project('Playhouse',
-  version: '1.0',
+  version: '1.1',
   meson_version: '>= 0.59.0',
   license: 'GPL-3.0-only'
 )
