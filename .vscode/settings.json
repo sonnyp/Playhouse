@@ -2,13 +2,13 @@
     "files.watcherExclude": {
         "**/.git/objects/**": true,
         "**/.git/subtree-cache/**": true,
-        "**/node_modules/*/**": true,
         "**/.hg/store/**": true,
+        "**/node_modules/*/**": true,
         ".flatpak/**": true,
         "_build/**": true
     },
     "editor.formatOnSave": true,
     "mesonbuild.configureOnOpen": false,
     "mesonbuild.buildFolder": "_build",
-    "mesonbuild.mesonPath": "/home/sonny/Projects/Playhouse/.flatpak/meson.sh"
+    "mesonbuild.mesonPath": "${workspaceFolder}/.flatpak/meson.sh"
 }

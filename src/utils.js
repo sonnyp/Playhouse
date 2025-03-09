@@ -2,7 +2,7 @@ import Gio from "gi://Gio";
 import Source from "gi://GtkSource";
 import GLib from "gi://GLib";
 
-import { promiseTask } from "../troll/src/util.js";
+import { promiseTask } from "../troll/src/async.js";
 
 const language_manager = Source.LanguageManager.get_default();
 

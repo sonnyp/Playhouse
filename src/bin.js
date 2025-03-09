@@ -3,6 +3,9 @@
 import { exit, programArgs, programInvocationName } from "system";
 import GLib from "gi://GLib";
 import { setConsoleLogDomain } from "console";
+import Gtk from "gi://Gtk";
+
+Gtk.init();
 
 imports.package.init({
   name: "@app_id@",
