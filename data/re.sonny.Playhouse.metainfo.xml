@@ -29,6 +29,7 @@
   <screenshots>
     <screenshot type="default">
       <image>https://raw.githubusercontent.com/sonnyp/Playhouse/main/data/screenshot.png</image>
+      <caption>Playhouse main window</caption>
     </screenshot>
   </screenshots>
   <content_rating type="oars-1.1" />
@@ -56,7 +57,7 @@
     <kudo>ModernToolkit</kudo>
   </kudos>
   <branding>
-    <color type="primary" scheme_preference="light">#DA9DD5p</color>
+    <color type="primary" scheme_preference="light">#DA9DD5</color>
     <color type="primary" scheme_preference="dark">#E357D9</color>
   </branding>
   <requires>
