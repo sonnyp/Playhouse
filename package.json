@@ -1,16 +1,16 @@
 {
   "private": true,
+  "type": "module",
   "devDependencies": {
+    "@eslint/compat": "^2.0.0",
     "@gi-types/adw1": "^1.1.1",
     "@gi-types/base-types": "^1.0.0",
     "@gi-types/gjs-environment": "^1.1.0",
     "@gi-types/gtk4": "^4.6.1",
     "@gi-types/gtk4-types": "^1.0.0",
-    "@babel/eslint-parser": "^7.19.1",
-    "@babel/plugin-syntax-import-assertions": "^7.18.6",
-    "eslint": "^8.24.0",
-    "eslint-plugin-import": "^2.26.0",
-    "prettier": "^2.7.1"
-  },
-  "type": "module"
+    "eslint": "^9.39.2",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-prettier": "^5.5.4",
+    "prettier": "^3.7.4"
+  }
 }

@@ -12,3 +12,4 @@ install
 Playhouse.flatpak
 troll
 *.gresource
+.foundry

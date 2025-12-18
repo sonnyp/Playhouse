@@ -1,4 +1,5 @@
 build/
+_build/
 install/
 flatpak/
 node_modules/

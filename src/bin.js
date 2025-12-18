@@ -3,7 +3,7 @@
 import { exit, programArgs, programInvocationName } from "system";
 import GLib from "gi://GLib";
 import { setConsoleLogDomain } from "console";
-import Gtk from "gi://Gtk";
+import Gtk from "gi://Gtk?version=4.0";
 
 Gtk.init();
 

@@ -3,8 +3,10 @@
   <id>re.sonny.Playhouse</id>
   <launchable type="desktop-id">re.sonny.Playhouse.desktop</launchable>
   <name translatable="no">Playhouse</name>
-  <developer_name translatable="no">Sonny Piers</developer_name>
-  <update_contact>sonnyp@gnome.org</update_contact>
+  <developer id="re.sonny">
+    <name translatable="no">Sonny Piers</name>
+  </developer>
+  <update_contact>playhouse@sonny.re</update_contact>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-3.0</project_license>
   <summary>Playground for HTML/CSS/JavaScript</summary>
@@ -23,7 +25,7 @@
   <url type="homepage">https://playhouse.sonny.re</url>
   <url type="bugtracker">https://playhouse.sonny.re/feedback</url>
   <url type="donation">https://playhouse.sonny.re/donate</url>
-  <url type="translate">https://playhouse.sonny.re/translate</url>
+  <url type="vcs-browser">https://playhouse.sonny.re/source</url>
   <screenshots>
     <screenshot type="default">
       <image>https://raw.githubusercontent.com/sonnyp/Playhouse/main/data/screenshot.png</image>
@@ -31,13 +33,20 @@
   </screenshots>
   <content_rating type="oars-1.1" />
   <releases>
+    <release version="1.2" date="2025-12-18">
+      <description>
+        <ul>
+          <li>Use GNOME platform 49</li>
+        </ul>
+      </description>
+    </release>
     <release version="1.1" date="2023-05-07">
-    <description>
-      <ul>
-        <li>Update WebKitGTK</li>
-        <li>Use GNOME platform 44</li>
-      </ul>
-    </description>
+      <description>
+        <ul>
+          <li>Update WebKitGTK</li>
+          <li>Use GNOME platform 44</li>
+        </ul>
+      </description>
     </release>
     <release version="1.0" date="2022-10-02"/>
   </releases>
@@ -46,8 +55,16 @@
     <kudo>HighContrast</kudo>
     <kudo>ModernToolkit</kudo>
   </kudos>
-  <custom>
-    <value key="Purism::form_factor">workstation</value>
-    <!-- <value key="Purism::form_factor">mobile</value> -->
-  </custom>
+  <branding>
+    <color type="primary" scheme_preference="light">#DA9DD5p</color>
+    <color type="primary" scheme_preference="dark">#E357D9</color>
+  </branding>
+  <requires>
+    <display_length compare="ge">1024</display_length>
+  </requires>
+  <recommends>
+    <control>keyboard</control>
+    <control>pointing</control>
+    <control>touch</control>
+  </recommends>
 </component>
