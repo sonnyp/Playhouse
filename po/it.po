@@ -1,0 +1,56 @@
+# ITALIAN TRANSLATION FOR PLAYHOUSE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the re.sonny.Playhouse package.
+# ALBANO BATTISTELLA <ALBANO_BATTISTELLA@HOTMAIL.COM>, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: re.sonny.Playhouse\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-01-04 00:47+0100\n"
+"PO-Revision-Date: 2022-10-05 18:22+010\n"
+"Last-Translator: ALBANO BATTISTELLA <albano_battistella@hotmail.com>\n"
+"Language-Team: Italian <LL@li.org>\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. TRANSLATORS: Don't translate
+#: data/re.sonny.Playhouse.desktop:4
+msgid "Playhouse"
+msgstr "Playhouse"
+
+#: data/re.sonny.Playhouse.desktop:5
+msgid "A playground for Web code"
+msgstr "Un parco giochi per il codice Web"
+
+#. TRANSLATORS: Don't translate
+#: data/re.sonny.Playhouse.desktop:12
+msgid "JS Bin;CodePen;JSFiddle;"
+msgstr "JS Bin;CodePen;JSFiddle;"
+
+#: data/re.sonny.Playhouse.metainfo.xml:10 src/about.js:9
+msgid "A Playground for HTML/CSS/JavaScript"
+msgstr "Un parco giochi per HTML/CSS/JavaScript"
+
+#: data/re.sonny.Playhouse.metainfo.xml:13
+msgid "Something clever"
+msgstr "Qualcosa di intelligente"
+
+#. TRANSLATORS: eg. 'Translator Name <your.email@domain.com>' or 'Translator Name https://website.example'
+#: src/about.js:19
+msgid "translator-credits"
+msgstr "Albano Battistella <albano_battistella@hotmail.com>"
+
+#: src/ShortcutsWindow.ui:15 src/window.ui:161
+msgid "Keyboard Shortcuts"
+msgstr "Scorciatoie da tastiera"
+
+#: src/ShortcutsWindow.ui:21
+msgid "Quit"
+msgstr "Esci"
+
+#: src/window.ui:165
+msgid "About Playhouse"
+msgstr "Informazioni su Playhouse"
